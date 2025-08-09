@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'tailwindcss';
+
+:root {
+  --color-primary: #6366f1; /* Modern indigo */
+  --color-secondary: #06b6d4; /* Bright cyan */
+
+  /* Background Colors */
+  --color-bg-primary: #0f172a; /* Darkest background (main) */
+  --color-bg-secondary: #1e293b; /* Slightly lighter (cards, nav) */
+  --color-bg-tertiary: #334155; /* Even lighter (elevated surfaces) */
+  --color-bg-elevated: #475569; /* Lightest background (modals, dropdowns) */
+
+  /* Text Colors */
+  --color-text-primary: #f8fafc; /* Bright white for headings */
+  --color-text-secondary: #cbd5e1; /* Light gray for paragraphs */
+  --color-text-tertiary: #94a3b8; /* Muted gray for captions */
+  --color-text-muted: #64748b; /* Very muted for disabled text */
+
+  /* Status Colors */
+  --color-success: #10b981; /* Emerald green */
+  --color-warning: #f59e0b; /* Amber orange */
+  --color-error: #ef4444; /* Red */
+  --color-info: #3b82f6; /* Blue */
+
+  /* Border Colors */
+  --color-border-primary: #334155; /* Main borders */
+  --color-border-secondary: #475569; /* Lighter borders */
+
+  /* Accent Colors */
+  --color-accent-blue: #3b82f6; /* Blue accent */
+  --color-accent-purple: #8b5cf6; /* Purple accent */
+  --color-accent-pink: #ec4899; /* Pink accent */
+}
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-bg-primary: var(--color-bg-primary);
+  --color-bg-secondary: var(--color-bg-secondary);
+  --color-bg-tertiary: var(--color-bg-tertiary);
+  --color-bg-elevated: var(--color-bg-elevated);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+  --color-text-muted: var(--color-text-muted);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-info: var(--color-info);
+  --color-border-primary: var(--color-border-primary);
+  --color-border-secondary: var(--color-border-secondary);
+  --color-accent-blue: var(--color-accent-blue);
+  --color-accent-purple: var(--color-accent-purple);
+  --color-accent-pink: var(--color-accent-pink);
+
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+@layer components {
+  .container {
+    margin-inline: auto;
+    padding-inline: 1rem; /* DEFAULT */
+  }
+  @media (min-width: 425px) {
+    .container {
+      padding-inline: 1.25rem;
+    }
+  } /* sm */
+  @media (min-width: 768px) {
+    .container {
+      padding-inline: 3rem;
+    }
+  } /* md */
+  @media (min-width: 1024px) {
+    .container {
+      padding-inline: 4rem;
+    }
+  } /* lg */
+  @media (min-width: 1366px) {
+    .container {
+      padding-inline: 5rem;
+    }
+  } /* xl */
+  @media (min-width: 1536px) {
+    .container {
+      padding-inline: 6rem;
+    }
+  } /* 2xl */
+  @media (min-width: 3840px) {
+    .container {
+      padding-inline: 8rem;
+    }
+  } /* 3xl */
+}
