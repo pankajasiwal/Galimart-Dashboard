@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import { ConfigProvider } from 'antd';
 // import 'antd/dist/reset.css';
+import '@ant-design/v5-patch-for-react-19';
 
 import { routeTree } from './routeTree.gen';
 import { createRouter, RouterProvider } from '@tanstack/react-router';
