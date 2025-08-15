@@ -10,8 +10,8 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <React.Fragment>
-      <div className='min-h-screen bg-bg-primary text-white font-poppins'>
-        <div className='flex gap-2'>
+      <div className='min-h-screen bg-bg-primary text-text-primary font-poppins'>
+        <div className='flex'>
           <Navigation />
           <div className='max-h-screen overflow-y-auto w-full'>
             <Outlet />

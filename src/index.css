@@ -2,35 +2,35 @@
 @import 'tailwindcss';
 
 :root {
-  --color-primary: #6366f1; /* Modern indigo */
-  --color-secondary: #06b6d4; /* Bright cyan */
+  --color-primary: #030213; /* Updated to new primary */
+  --color-secondary: oklch(0.95 0.0058 264.53); /* Updated to new secondary */
 
   /* Background Colors */
-  --color-bg-primary: #0f172a; /* Darkest background (main) */
-  --color-bg-secondary: #1e293b; /* Slightly lighter (cards, nav) */
-  --color-bg-tertiary: #334155; /* Even lighter (elevated surfaces) */
-  --color-bg-elevated: #475569; /* Lightest background (modals, dropdowns) */
+  --color-bg-primary: #ffffff; /* Updated to white background */
+  --color-bg-secondary: #ffffff; /* Updated to white for cards */
+  --color-bg-tertiary: #ccccccc9; /* Updated to muted background */
+  --color-bg-elevated: #f3f3f5; /* Updated to input background */
 
   /* Text Colors */
-  --color-text-primary: #f8fafc; /* Bright white for headings */
-  --color-text-secondary: #cbd5e1; /* Light gray for paragraphs */
-  --color-text-tertiary: #94a3b8; /* Muted gray for captions */
-  --color-text-muted: #64748b; /* Very muted for disabled text */
+  --color-text-primary: oklch(0.145 0 0); /* Updated to new foreground */
+  --color-text-secondary: #717182; /* Updated to muted foreground */
+  --color-text-tertiary: #9f9fa9ee; /* Updated to muted foreground */
+  --color-text-muted: #717182; /* Updated to muted foreground */
 
   /* Status Colors */
-  --color-success: #10b981; /* Emerald green */
-  --color-warning: #f59e0b; /* Amber orange */
-  --color-error: #ef4444; /* Red */
-  --color-info: #3b82f6; /* Blue */
+  --color-success: oklch(0.646 0.222 41.116); /* Updated to chart-1 */
+  --color-warning: oklch(0.828 0.189 84.429); /* Updated to chart-4 */
+  --color-error: #d4183d; /* Updated to destructive */
+  --color-info: oklch(0.6 0.118 184.704); /* Updated to chart-2 */
 
   /* Border Colors */
-  --color-border-primary: #334155; /* Main borders */
-  --color-border-secondary: #475569; /* Lighter borders */
+  --color-border-primary: oklab(0.18 0 0 / 0.42); /* Updated to new border */
+  --color-border-secondary: oklch(0.78 0 0); /* Updated to sidebar border */
 
   /* Accent Colors */
-  --color-accent-blue: #3b82f6; /* Blue accent */
-  --color-accent-purple: #8b5cf6; /* Purple accent */
-  --color-accent-pink: #ec4899; /* Pink accent */
+  --color-accent-blue: oklch(0.398 0.07 227.392); /* Updated to chart-3 */
+  --color-accent-purple: oklch(0.769 0.188 70.08); /* Updated to chart-5 */
+  --color-accent-pink: #e9ebef; /* Updated to accent */
 }
 
 @theme {
@@ -61,6 +61,10 @@
   .container {
     margin-inline: auto;
     padding-inline: 1rem; /* DEFAULT */
+  }
+
+  .input-field {
+    @apply border border-border-secondary p-2 outline-0 rounded-md placeholder:text-text-tertiary;
   }
   @media (min-width: 425px) {
     .container {

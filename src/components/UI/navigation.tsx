@@ -1,6 +1,6 @@
 import { HomeOutlined, PlusCircleOutlined, UserOutlined } from '@ant-design/icons';
 import type { INavigationMenu } from '../../types/nav.type';
-import { Link } from '@tanstack/react-router';
+import { Link, useLocation } from '@tanstack/react-router';
 import { Layout } from 'antd';
 import Sider from 'antd/es/layout/Sider';
 
@@ -40,23 +40,24 @@ export function MobileNavigation() {
 }
 
 export function DesktopNavigation() {
+  const { pathname } = useLocation();
   return (
-    <div className='hidden md:block'>
+    <div className='hidden md:block md:border-r-2 md:border-border-primary'>
       <Layout hasSider style={{ backgroundColor: 'var(--color-bg-secondary)' }}>
-        <Sider width={'8rem'} className='h-screen text-text-primary' style={{ maxWidth: '16rem', maxHeight: '100vh' }}>
-          <div className='flex flex-col gap-3'>
-            <div className='p-2 lg:p-4 border-b'>
-              <h1 className='text-center text-text-primary'>GaliMart</h1>
+        <Sider
+          width={'14rem'}
+          className='h-screen text-text-primary'
+          style={{ maxHeight: '100vh', backgroundColor: 'var(--color-bg-secondary)' }}
+        >
+          <div className='flex flex-col gap-8 p-2 lg:p-4'>
+            <div className=''>
+              <h1 className='text-text-primary text-xl font-medium'>GaliMart Dashboard</h1>
             </div>
 
-            <ul className='space-y-4 self-center'>
+            <ul className='space-y-4'>
               {navigationMenu.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    to={item.path}
-                    className='flex items-center gap-2 lg:text-lg [&.active]:font-bold'
-                    style={{ color: 'inherit' }}
-                  >
+                <li key={item.label} className={pathname === item.path ? 'bg-bg-tertiary rounded-md p-2' : 'p-2'}>
+                  <Link to={item.path} className='flex items-center gap-2 lg:text-lg' style={{ color: 'inherit' }}>
                     {item.icon} <span className='capitalize'>{item.label}</span>
                   </Link>
                 </li>
