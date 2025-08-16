@@ -1,4 +1,4 @@
-import type { IShopInfo } from "../../zod/profile.zod";
+import type { IShopInfo } from '../../schema/profile.schema';
 
 export default function FormInputField({
   label,
@@ -15,11 +15,11 @@ export default function FormInputField({
 }) {
   let input;
   switch (inputType) {
-    case "textarea":
+    case 'textarea':
       input = (
         <textarea
           id={id as string}
-          className="input-field"
+          className='input-field'
           placeholder={placeholder}
           value={field.state.value}
           onChange={(e) => field.handleChange(e.target.value)}
@@ -32,7 +32,7 @@ export default function FormInputField({
         <input
           type={inputType}
           id={id as string}
-          className="input-field"
+          className='input-field'
           placeholder={placeholder}
           value={field.state.value}
           onChange={(e) => field.handleChange(e.target.value)}
@@ -41,18 +41,13 @@ export default function FormInputField({
       break;
   }
   return (
-    <div className="flex flex-col gap-2">
-      <label
-        htmlFor={id as string}
-        className="text-sm font-medium text-text-primary capitalize"
-      >
+    <div className='flex flex-col gap-2'>
+      <label htmlFor={id as string} className='text-sm font-medium text-text-primary capitalize'>
         {label}
       </label>
       {input}
       {field.state.meta.errors.length > 0 && (
-        <em className="text-error text-xs">
-          {field.state.meta.errors[0].message}
-        </em>
+        <em className='text-error text-xs'>{field.state.meta.errors[0].message}</em>
       )}
     </div>
   );
