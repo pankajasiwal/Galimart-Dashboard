@@ -5,6 +5,7 @@ import { shopInfoSchema, type IShopInfo } from '../schema/profile.schema';
 import { Button } from 'antd';
 import { useState } from 'react';
 import ProfileForm from '../components/profile-form';
+import { ThunderboltOutlined } from '@ant-design/icons';
 
 export const Route = createLazyFileRoute('/profile')({
   component: ProfilePage,
@@ -65,12 +66,12 @@ function ProfilePage() {
             <ProfileForm form={form} />
           </div>
           <div className='self-start'>
-            <ProfileCard title='Quick info'>
+            <ProfileCard title='Quick info' icon={<ThunderboltOutlined />}>
               <div className='flex flex-col gap-4'>
                 {quickInfo.map((info: { label: string; key: string }) => (
                   <div className='flex flex-col gap-3' key={info.key}>
                     <p className='capitalize text-primary'>{info.label}</p>
-                    <p className='border-b border-b-border-secondary p-3 capitalize text-text-secondary'>
+                    <p className='border-b border-b-border-primary p-3 capitalize text-text-secondary'>
                       {quickInfoValue[info.key as keyof typeof quickInfoValue] || '--'}
                     </p>
                   </div>

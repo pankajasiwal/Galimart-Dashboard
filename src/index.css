@@ -25,7 +25,7 @@
 
   /* Border Colors */
   --color-border-primary: oklab(0.18 0 0 / 0.42); /* Updated to new border */
-  --color-border-secondary: oklch(0.78 0 0); /* Updated to sidebar border */
+  --color-border-secondary: oklch(91.739% 0.00214 14.518 / 0.627); /* Updated to sidebar border */
 
   /* Accent Colors */
   --color-accent-blue: oklch(0.398 0.07 227.392); /* Updated to chart-3 */
@@ -64,7 +64,7 @@
   }
 
   .input-field {
-    @apply border border-border-secondary p-2 outline-0 rounded-md placeholder:text-text-tertiary;
+    @apply border border-border-primary p-2 outline-0 rounded-md placeholder:text-text-tertiary;
   }
   @media (min-width: 425px) {
     .container {
